@@ -1,0 +1,647 @@
+/* Basic Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif; /* Ya koi aur saaf font */
+}
+
+/* ----------------- Hero Section Styling ----------------- */
+
+.hero-section {
+    /* Height ko screen jitna set kiya gaya hai */
+    height: 100vh;
+    width: 100%;
+    
+    /* Background Image (Aapko apni image use karni hogi) */
+    background: url('./backgroud\ image.jpg') no-repeat center center/cover; /* 'hero-bg.jpg' ki jaga apni image file ka naam likhen */
+    
+    /* Dark Overlay ke liye (Text ko zyada wazeh banane ke liye) */
+    position: relative;
+    color: white; /* Text ka rang safed (white) */
+    
+    /* Content ko center karne ke liye Flexbox ka istemaal */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center */
+    align-items: center; /* Horizontally center */
+    text-align: center;
+}
+
+/* Dark Overlay ka asar */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Background image ke upar halka sa black shade */
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 1; /* Content se neeche rakhen */
+}
+
+/* Content ko overlay ke upar laane ke liye */
+.hero-content {
+    z-index: 2;
+    padding-bottom: 80px; /* Scroll down button ke liye jagah chhorna */
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 5rem; /* Zomato text ka size */
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* Main Heading (India's #1...) */
+.hero-content h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Sub Text (Experience fast...) */
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Download Buttons Styling */
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Buttons ke darmiyan fasla */
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    background-color: #000; /* Black background */
+    border: 1px solid white; /* Safed border */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover par halka rang badalna */
+}
+
+.btn .icon {
+    font-style: normal;
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+/* Scroll Down Indicator Styling */
+.scroll-down {
+    position: absolute;
+    bottom: 30px; /* Neeche se fasla */
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+/* Note: Google Play (G) aur App Store () ke icons ke liye asal mein FontAwesome ya SVG icons ki zaroorat padti hai. Yahan maine sirf text (G aur ) istimaal kiya hai. */
+/* ----------------- Intro Section Styling ----------------- */
+
+.intro-section {
+    /* Height thodi zyada rakhi gayi hai taake content center mein aa sake */
+    height: 90vh; 
+    width: 100%;
+    background-color: #ffffff; /* Safed background */
+    
+    /* Content aur images ko position dene ke liye */
+    position: relative;
+    overflow: hidden; /* Taake bahar nikalne wali cheezein chhip jaaen */
+
+    /* Text ko center mein laane ke liye */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.intro-text {
+    z-index: 10; 
+    max-width: 650px; 
+    padding: 0 20px;
+}
+
+
+.intro-text h3 {
+    font-size: 3rem; 
+    font-weight: 500;
+    color: #cb202d; 
+    margin-bottom: 20px;
+}
+
+
+.intro-text p {
+    font-size: 1.2rem;
+    color: #4f4f4f;
+    line-height: 1.5;
+}
+
+
+
+
+.visual-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.food-img {
+    position: absolute;
+    z-index: 5; 
+    width: auto;
+    
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); 
+}
+
+/* Burger Image Positioning (Left-Mid) */
+.burger-left {
+    width: 300px; 
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%); 
+}
+
+
+.momo-top-right {
+    width: 250px;
+    top: 15%;
+    right: 10%;
+}
+
+
+.pizza-bottom-right {
+    width: 250px;
+    bottom: 10%;
+    right: 15%;
+    transform: rotate(10deg); 
+}
+
+
+
+.dot {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background-color: #ff7e8b; 
+    opacity: 0.7;
+    z-index: 4; 
+}
+
+
+.top-left-dot {
+    width: 10px;
+    height: 10px;
+    top: 10%;
+    left: 30%;
+}
+
+
+.bottom-left-dot {
+    width: 30px;
+    height: 30px;
+    bottom: 5%;
+    left: 8%;
+    background-color: #ff7e8b;
+}
+
+
+.small-leaf {
+    width: 15px;
+    height: 15px;
+    background-color: #79a830; 
+    border-radius: 0%;
+    transform: rotate(45deg);
+    top: 15%;
+    left: 35%;
+}
+/* Stats Section aur Next Heading ki styling */
+.stats-and-heading-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #fcfcfc; /* Halka sa off-white background */
+}
+
+/* ----------------- Stats Cards Styling ----------------- */
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px; /* Cards ke darmiyan fasla */
+    margin-bottom: 80px;
+    position: relative;
+    /* Zomato red circle top left corner */
+}
+
+/* Red Dot/Circle Top Left */
+.stats-and-heading-section::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 10%;
+    width: 25px;
+    height: 25px;
+    background-color: #cb202d;
+    border-radius: 50%;
+}
+
+.stat-card {
+    text-align: center;
+    position: relative;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.stat-text {
+    font-size: 1rem;
+    color: #4f4f4f;
+}
+
+/* Icon ki shakal banane ke liye */
+.stat-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -30px; /* Number ke upar rakhne ke liye */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: #f75050; /* Base color for icons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Icon ka rang */
+    font-size: 1rem;
+}
+
+/* Note: Asal icons ke liye FontAwesome ya Custom SVGs zaroori hain. */
+/* Ye sirf visual placement ke liye dummy classes hain. */
+.icon-restaurant::after {
+    content: '\1F37A'; /* Dummy Restaurant icon */
+}
+
+.icon-location::after {
+    content: '\1F4CD'; /* Dummy Location pin */
+}
+
+.icon-delivery::after {
+    content: '\1F69A'; /* Dummy Delivery icon */
+}
+
+
+/* ----------------- Next Heading Styling ----------------- */
+
+.next-heading-block {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.next-heading-block h3 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #cb202d; /* Zomato Red */
+    margin-bottom: 15px;
+}
+
+.next-heading-block p {
+    font-size: 1.1rem;
+    color: #4f4f4f;
+    line-height: 1.5;
+}
+/* ----------------- App Features Grid Styling ----------------- */
+
+.app-features-section {
+    background-color: #fff;
+    padding: 50px 0;
+    position: relative;
+    /* Pichle section ke curved edge ke liye */
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+    margin-bottom: -50px; /* Neeche wale section se overlap ke liye */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.feature-item p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #4f4f4f;
+}
+
+/* Icon ki shakal banane ke liye (Circles with dummy content) */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f7f7f7;
+    border: 1px solid #eee;
+    margin-bottom: 5px;
+    /* Yahan har circle ke liye alag background image (icon) lagani hogi */
+}
+
+/* Center Phone Frame Styling */
+.center-item {
+    grid-column: 3 / span 1;
+}
+
+.phone-frame {
+    width: 120px;
+    height: 240px;
+    border: 5px solid #222;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.icon-calendar {
+    width: 50px;
+    height: 50px;
+    background-color: #ff7e8b; /* Calendar icon ki jaga */
+    border-radius: 8px;
+    margin-bottom: 5px;
+    /* Yahan calendar icon ki image ya SVG aayega */
+}
+
+
+/* ----------------- Zomato Gold Section ----------------- */
+
+.gold-section {
+    background-color: #282c3f; /* Dark Blue/Black background */
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.gold-logo-text {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.gold-title {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    /* Gold-like color */
+    color: #ffd700; 
+    line-height: 1;
+}
+
+.gold-tagline {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.gold-benefits-header {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #ffd700;
+}
+
+.gold-benefits-grid {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    max-width: 250px;
+}
+
+.benefit-item strong {
+    font-size: 1.2rem;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.benefit-item .small-text {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    display: block;
+    /* Asal mein ye icons SVGs honge */
+}
+
+
+/* ----------------- Eternal Projects Section ----------------- */
+
+.eternal-section {
+    background-color: #f7f7f7;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.eternal-header {
+    margin-bottom: 50px;
+}
+
+.eternal-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.1;
+}
+
+.eternal-header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.eternal-apps-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+}
+
+.app-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    /* Yahan har card ke liye alag background color/image aayegi */
+}
+
+.icon-zomato { background-color: #cb202d; }
+.icon-blinkit { background-color: #ffc400; }
+.icon-district { background-color: #5d38a0; }
+.icon-hyperpure { background-color: #ff4d4d; }
+
+.app-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.app-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.app-card a {
+    color: #cb202d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* ----------------- Footer Styling ----------------- */
+
+.main-footer {
+    background-color: #282c3f; /* Gold Section wala dark color */
+    color: white;
+    padding: 40px 60px 20px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.footer-links-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    width: 18%; /* 5 columns fit karne ke liye */
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-col h5 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-col a:hover {
+    color: white;
+}
+
+.social-col .social-icons {
+    margin-bottom: 20px;
+}
+
+.social-col .social-icons a {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #444;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+    margin-right: 5px;
+    font-size: 0.8rem;
+}
+
+.app-badge {
+    width: 120px; /* App store images ka size */
+    margin-top: 10px;
+    display: block;
+}
+
+.footer-bottom-text {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom-text p {
+    font-size: 0.75rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
